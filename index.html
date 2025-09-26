@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Affirmation Generator</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: #6a1b9a;
+      margin-bottom: 1.5rem;
+    }
+
+    #quote {
+      font-size: 1.3rem;
+      color: #444;
+      margin-bottom: 2rem;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    button {
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      background-color: #6a1b9a;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #8e24aa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>✨ Daily Affirmation ✨</h1>
+    <p id="quote">Click the button below to receive a little boost.</p>
+    <button onclick="newAffirmation()">Cheer me up!</button>
+  </div>
+
+  <script>
+    const affirmations = [
+      "You are doing your best, and that is enough.",
+      "Progress, not perfection. Keep going!",
+      "You are capable, confident, and unstoppable.",
+      "Mistakes = learning. Celebrate them!",
+       
+          ];
+
+    function newAffirmation() {
+      const quote = document.getElementById('quote');
+      const randomIndex = Math.floor(Math.random() * affirmations.length);
+      quote.style.opacity = 0;
+      setTimeout(() => {
+        quote.innerText = affirmations[randomIndex];
+        quote.style.opacity = 1;
+      }, 200);
+    }
+  </script>
+
+</body>
+</html>
